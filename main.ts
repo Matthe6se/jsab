@@ -1,70 +1,58 @@
-let mySprite2: Sprite = null
-music.play(music.createSong(assets.song`a904`), music.PlaybackMode.UntilDone)
-let _56890124 = 0
-_56890124 += 1
-scene.cameraFollowSprite(mySprite2)
+encoders.defaultEncoder.onChanged(function () {
+    game.gameOver(true)
+})
 let mySprite = sprites.create(img`
-    ........................
-    .....ffff...............
-    ...fff22fff.............
-    ..fff2222fff............
-    .fffeeeeeefff...........
-    .ffe222222eef...........
-    .fe2ffffff2ef...........
-    .ffffeeeeffff...........
-    ffefbf44fbfeff..........
-    fee41fddf14eef..........
-    .ffffdddddeef...........
-    fddddf444eef............
-    fbbbbf2222f4e...........
-    fbbbbf2222fd4...........
-    .fccf45544f44...........
-    ..ffffffff..............
-    ....ff..ff..............
-    ........................
-    ........................
-    ........................
-    ........................
-    ........................
-    ........................
-    ........................
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+let mySprite2 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 let mySprite3 = sprites.create(img`
-    . . . . . . . . . . . . . . 
-    e e e . . . . e e e . . . . 
-    c d d c . . c d d c . . . . 
-    c b d d f f d d b c . . . . 
-    c 3 b d d b d b 3 c . . . . 
-    f b 3 d d d d 3 b f . . . . 
-    e d d d d d d d d e . . . . 
-    e d f d d d d f d e . b f b 
-    f d d f d d f d d f . f d f 
-    f b d d b b d d 2 b f f d f 
-    . f 2 2 2 2 2 2 d b b d b f 
-    . f d d d d d d d f f f f . 
-    . . f d b d f d f . . . . . 
-    . . . f f f f f f . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 100)
-mySprite2 = sprites.create(img`
-    . . . . . . 5 . 5 . . . . . . . 
-    . . . . . f 5 5 5 f f . . . . . 
-    . . . . f 1 5 2 5 1 6 f . . . . 
-    . . . f 1 6 6 6 6 6 1 6 f . . . 
-    . . . f 6 6 f f f f 6 1 f . . . 
-    . . . f 6 f f d d f f 6 f . . . 
-    . . f 6 f d 3 d d 3 d f 6 f . . 
-    . . f 6 f d 3 d d 3 d f 6 f . . 
-    . . f 6 6 f d d d d f 6 6 f . . 
-    . f 6 6 f 3 f f f f 3 f 6 6 f . 
-    . . f f d 3 5 3 3 5 3 d f f . . 
-    . . f d d f 3 5 5 3 f d d f . . 
-    . . . f f 3 3 3 3 3 3 f f . . . 
-    . . . f 3 3 5 3 3 5 3 3 f . . . 
-    . . . f f f f f f f f f f . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
-controller.moveSprite(mySprite2, 100, 100)
-game.onUpdate(function () {
-	
-})
+let mySprite4 = sprites.create(assets.image`Mojang studios`, SpriteKind.Player)
